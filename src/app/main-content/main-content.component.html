@@ -19,8 +19,12 @@
                 <th scope="col">Courses</th>
                 <th>
                     <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-success" (click)="saveStudent()">Save</button>
-                            <button type="button" class="btn btn-info" [disabled]="disableAddButton" (click)="addStudent()">Add</button>
+                            <button type="button" mat-raised-button color="accent" (click)="saveStudent()">
+                                <i class="material-icons">save_alt</i>
+                            </button>
+                            <button type="button" mat-raised-button color="warn" [disabled]="disableAddButton" (click)="addStudent()">
+                                <i class="material-icons">create</i>
+                            </button>
                     </div>
                 </th>
               </tr>
@@ -45,7 +49,11 @@
                         <input [(ngModel)]="student.course" type="text" class="form-control" placeholder="Course">
                 </td>
 
-                <td><button type="button" class="btn btn-danger pull-right" (click)="removeStudent(i)">X</button></td>
+                <td>
+                <button type="button" class="pull-right" mat-raised-button color="warn" (click)="removeStudent(i)">
+                        <i class="material-icons">delete_sweep</i>
+                </button>
+                </td>
               </tr>
             </tbody>
           </table>
